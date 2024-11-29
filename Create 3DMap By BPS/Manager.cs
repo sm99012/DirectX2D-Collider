@@ -20,10 +20,10 @@ public class Manager : MonoBehaviour
         }
     }
 
-    // ¿øº»
+    // ì›ë³¸
     public GameObject[,] m_ga_Cube;
 
-    // ¿øº» 1/2
+    // ì›ë³¸ 1/2
     public Vector3[,] m_va_Cube_1d2;
     int[,] narytemp;
 
@@ -60,7 +60,7 @@ public class Manager : MonoBehaviour
 
     void Update()
     {
-        // ¸Ê BSP ¹è¿­
+        // ë§µ BSP ë°°ì—´
         if (Input.GetKeyUp(KeyCode.F1))
         {
             for (int x = 0; x < m_n_Length_x; x++)
@@ -78,7 +78,7 @@ public class Manager : MonoBehaviour
             //BSP(0, 50, 0, 50, 5);
             //BSP(0, 50, 0, 50, 1, 4, true);
 
-            // ÇÕ 47
+            // í•© 47
             //BSP_X(0, 200, 0, 15);
             //BSP_Z(0, 50, 0, 15);
             //BSP_X(0, 200, 0, 5);
@@ -146,22 +146,22 @@ public class Manager : MonoBehaviour
             BSP_Z(0, m_n_Length_z, 0, 5);
             //BSP_Z(0, m_n_Length_z, 0, 3);
         }
-        // °­È­ ÇÊÅÍ
+        // ê°•í™” í•„í„°
         if (Input.GetKeyUp(KeyCode.F2))
         {
             Smooth_1(0, m_n_Length_x, 0, m_n_Length_z);
         }
-        // ¾àÈ­ ÇÊÅÍ
+        // ì•½í™” í•„í„°
         if (Input.GetKeyUp(KeyCode.F3))
         {
             Smooth_2(0, m_n_Length_x, 0, m_n_Length_z);
         }
-        // ¸Ê Àç»ı¼º(Å©±â ÃÊ±âÈ­)
+        // ë§µ ì¬ìƒì„±(í¬ê¸° ì´ˆê¸°í™”)
         if (Input.GetKeyUp(KeyCode.F5))
         {
             InitialSet();
         }
-        // È°¼ºÈ­ / ºñÈ°¼ºÈ­
+        // í™œì„±í™” / ë¹„í™œì„±í™”
         if (Input.GetKeyUp(KeyCode.PageDown))
         {
             for (int x = 0; x < m_n_Length_x; x++)
@@ -195,7 +195,7 @@ public class Manager : MonoBehaviour
             }
             SW.Close();
         }
-        // ¸Ê µ¥ÀÌÅÍ ·Îµù
+        // ë§µ ë°ì´í„° ë¡œë”©
         if (Input.GetKeyUp(KeyCode.Home))
         {
             StreamReader SR = new StreamReader("./Assets/Map/MapInfo.csv");
@@ -237,7 +237,7 @@ public class Manager : MonoBehaviour
 
             SR.Close();
         }
-        // ¸Å½¬ »ı¼º - ¿øº»
+        // ë§¤ì‰¬ ìƒì„± - ì›ë³¸
         if (Input.GetKeyDown(KeyCode.End))
         {
             for (int x = 0; x < m_n_Length_x; x++)
@@ -254,11 +254,11 @@ public class Manager : MonoBehaviour
                 }
             }
         }
-        // ÇÊÅÍ - 1/2 x, z º¯È­ ¾øÀ½
-        // ¡á¡à¡á¡à
-        // ¡à¡à¡à¡à
-        // ¡á¡à¡á¡à
-        // ¡à¡à¡à¡à
+        // í•„í„° - 1/2 x, z ë³€í™” ì—†ìŒ
+        // â– â–¡â– â–¡
+        // â–¡â–¡â–¡â–¡
+        // â– â–¡â– â–¡
+        // â–¡â–¡â–¡â–¡
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             narytemp = new int[m_n_Length_x / 2, m_n_Length_z / 2];
@@ -299,10 +299,10 @@ public class Manager : MonoBehaviour
             SW.Close();
 
         }
-        // ÇÊÅÍ - 1/2 x, z ¾ĞÃà(Æò±Õ)
-        // ¡á¡á
-        // ¡á¡á
-        // ¸Å½¬ »ı¼º - 1/2
+        // í•„í„° - 1/2 x, z ì••ì¶•(í‰ê· )
+        // â– â– 
+        // â– â– 
+        // ë§¤ì‰¬ ìƒì„± - 1/2
         if (Input.GetKeyDown(KeyCode.Keypad4))
         {
             for (int x = 0; x < m_n_Length_x / 2; x++)
@@ -581,7 +581,7 @@ public class Manager : MonoBehaviour
     {
         if (depth == 0)
             return;
-        // x 2ºĞÇÒ
+        // x 2ë¶„í• 
         if (hv == true)
         {
             int nRandomNum_X = Random.Range(limit_min_x + 1, limit_max_x - 1);
@@ -621,7 +621,7 @@ public class Manager : MonoBehaviour
             else
                 BSP(nRandomNum_X, limit_max_x, limit_min_z, limit_max_z, depth_start + 1, depth - 1, true);
         }
-        // y 2ºĞÇÒ
+        // y 2ë¶„í• 
         //else
         //{
         //    int nRandomNum_Z = Random.Range(limit_min_z + 1, limit_max_z - 1);
@@ -733,7 +733,7 @@ public class Manager : MonoBehaviour
         }
     }
 
-    // Áõ°¡Çü
+    // ì¦ê°€í˜•
     void Smooth_1(int min_x, int max_x, int min_z, int max_z)
     {
         int numc1 = 0;
@@ -766,7 +766,7 @@ public class Manager : MonoBehaviour
         }
     }
 
-    // °¨¼ÒÇü
+    // ê°ì†Œí˜•
     void Smooth_2(int min_x, int max_x, int min_z, int max_z)
     {
         int numc1 = 0;
