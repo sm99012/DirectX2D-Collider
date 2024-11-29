@@ -11,9 +11,9 @@ public class Create_Mesh_1 : MonoBehaviour
     Vector2[] vUvs = new Vector2[3];
     int[] nTriangles = new int[3];
 
-    // num_ground == 0 : กแ กแ กแ ฆข num_ground == 1 : กเ กเ กแ
-    //                   กแ กแ กเ ฆข                   กเ กแ กแ
-    //                   กแ กเ กเ ฆข                   กแ กแ กแ
+    // num_ground == 0 : ยกรก ยกรก ยกรก ยฆยข num_ground == 1 : ยกร  ยกร  ยกรก
+    //                   ยกรก ยกรก ยกร  ยฆยข                   ยกร  ยกรก ยกรก
+    //                   ยกรก ยกร  ยกร  ยฆยข                   ยกรก ยกรก ยกรก
     public void Create_Mesh_1_1(int num_ground, Vector3[] v_vertices)
     {
         Mesh mesh = new Mesh();
